@@ -2,34 +2,14 @@ package com.company;
 
 public class Pizza {
   private final boolean hasCheese;
-  private final boolean hasSausage;
+  private final boolean hasSauce;
   private final boolean hasPepperoni;
   private final boolean hasBlackOlive;
   private final boolean hasPineapple;
 
-  public boolean hasCheese() {
-    return hasCheese;
-  }
-
-  public boolean hasSausage() {
-    return hasSausage;
-  }
-
-  public boolean hasPepperoni() {
-    return hasPepperoni;
-  }
-
-  public boolean hasBlackOlive() {
-    return hasBlackOlive;
-  }
-
-  public boolean hasPineapple() {
-    return hasPineapple;
-  }
-
   private Pizza(PizzaBuilder builder) {
     this.hasCheese  = builder.hasCheese;
-    this.hasSausage = builder.hasSausage;
+    this.hasSauce = builder.hasSauce;
     this.hasPepperoni = builder.hasPepporoni;
     this.hasBlackOlive = builder.hasBlackOlive;
     this.hasPineapple = builder.hasPineapple;
@@ -40,7 +20,7 @@ public class Pizza {
     StringBuilder sb = new StringBuilder();
     sb.append("----------------------------------------\n");
     sb.append("Has Cheese: " + this.hasCheese + "\n");
-    sb.append("Has Sausage: " + this.hasSausage + "\n");
+    sb.append("Has Sauce: " + this.hasSauce + "\n");
     sb.append("Has Pepperoni: " + this.hasPepperoni + "\n");
     sb.append("Has Black Olive: " + this.hasBlackOlive + "\n");
     sb.append("----------------------------------------");
@@ -49,14 +29,14 @@ public class Pizza {
 
   public static class PizzaBuilder {
     private boolean hasCheese;
-    private boolean hasSausage;
+    private boolean hasSauce;
     private boolean hasPepporoni;
     private boolean hasBlackOlive;
     private boolean hasPineapple;
 
     public PizzaBuilder() {
       this.hasCheese = true;
-      this.hasSausage = true;
+      this.hasSauce = true;
     }
 
     public PizzaBuilder hasBlackOlive(boolean hasBO) {
@@ -79,8 +59,8 @@ public class Pizza {
       return this;
     }
 
-    public PizzaBuilder takeOffSausage() {
-      this.hasSausage = false;
+    public PizzaBuilder takeOffSauce() {
+      this.hasSauce = false;
       return this;
     }
 
